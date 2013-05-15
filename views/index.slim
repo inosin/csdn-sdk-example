@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title CSDN-SDK Examples
+
+  body
+    h1 CSDN-SDK examples
+
+    #content
+    - if @account
+    a[href="/logout"] Logout
+    h3 帐户信息
+    table[border=1]
+        tr
+          th = '类别'
+          th = '内容'
+        - for item in @account.keys do
+          tr
+            td = item
+            td = @account[item]
+    - else
+      a[href="/login"] Login
+
